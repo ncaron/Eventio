@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import changeTitle from '../../Helpers/changeTitle';
 import Logo from '../../Common/Logo';
 import LeftPanel from '../../Common/LeftPanel';
 import ErrorBodyContainer from './style';
@@ -8,6 +9,8 @@ import RefreshButton from '../../Common/Buttons/RefreshButton';
 import TrooperImage from '../../Common/TrooperImage';
 
 const NotFound = () => {
+  changeTitle('404 Not Found');
+
   return (
     <div>
       <Logo color="light" />
