@@ -5,8 +5,9 @@ import { HashRouter as Router } from 'react-router-dom';
 import WebFont from 'webfontloader';
 import 'reset-css';
 
+import './globalStyle';
 import store from './store';
-import Routes from './routes';
+import Routes from './Routes/Routes';
 
 WebFont.load({
   google: {
