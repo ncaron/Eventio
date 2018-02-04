@@ -26,6 +26,11 @@ module.exports = {
         }
       },
       {
+        test: /style\.js$/i,
+        exclude: /(node_modules|dist)/,
+        loader: 'stylelint-custom-processor-loader'
+      },
+      {
         test: /\.css$/,
         use: [
           'style-loader',
