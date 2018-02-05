@@ -15,6 +15,8 @@ const LogoStyled = styled.svg`
   fill: ${charcoal_grey};
 
   @media (min-width: ${queries.LARGE}) {
+    top: 39px;
+    left: 61px;
     fill: ${props => props.color == 'light' ? white : charcoal_grey};
   }
 `;

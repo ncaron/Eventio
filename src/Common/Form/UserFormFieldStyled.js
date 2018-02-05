@@ -22,12 +22,11 @@ const FormFieldStyled = styled.div`
     padding-bottom: 7px;
     background: transparent;
     color: ${charcoal_grey};
+    font-family: "Hind", sans-serif;
     font-size: 18px;
     line-height: 1.33;
     border: none;
     border-bottom: 1px solid ${props => props.error ? warm_pink : pale_grey};
-
-    &.passwordInput { padding-right: 28px; }
 
     + label {
       position: absolute;

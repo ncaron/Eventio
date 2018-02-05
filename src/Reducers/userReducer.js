@@ -4,6 +4,8 @@ import cloneState from '../Helpers/cloneState';
 const initialState = {
   loggedIn: false,
   loginError: false,
+  passwordSent: false,
+  passwordResetError: false,
   currentUser: {
     uid: null,
     email: null
@@ -27,6 +29,20 @@ const userReducer = (state = initialState, action) => {
 
     case types.LOGIN_FAILURE: {
       newState.loginError = true;
+
+      return newState;
+    }
+
+    case types.PASSWORD_SUCCESS: {
+      newState.passwordSent = true;
+      newState.passwordResetError = false;
+
+      return newState;
+    }
+
+    case types.PASSWORD_FAILURE: {
+      newState.passwordSent = false;
+      newState.passwordResetError = true;
 
       return newState;
     }

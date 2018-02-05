@@ -34,6 +34,7 @@ const Container = styled.div`
       color: ${white};
       font-family: "Playfair Display", serif;
       font-size: 36px;
+      line-height: 1.5;
     }
 
     span {

@@ -9,3 +9,12 @@ export const login = (email, password) => {
     }
   };
 };
+
+export const forgotPassword = (email) => {
+  return {
+    type: types.PASSWORD_REQUEST,
+    payload: {
+      email
+    }
+  };
+};

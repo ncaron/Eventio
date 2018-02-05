@@ -8,7 +8,7 @@ import changeTitle from '../../Helpers/changeTitle';
 import Logo from '../../Common/Logo';
 import LeftPanel from '../../Common/LeftPanel';
 import LoginContainer from './style';
-import FormFieldStyled from './FormFieldStyled';
+import UserFormFieldStyled from '../../Common/Form/UserFormFieldStyled';
 import PrimaryButton from '../../Common/Buttons/PrimaryButton';
 import { login } from '../../Actions/userAction';
 
@@ -66,16 +66,16 @@ class Login extends Component {
             }
           </p>
 
-          <FormFieldStyled value={ this.state.email }error={ this.props.loginError }>
+          <UserFormFieldStyled value={ this.state.email } error={ this.props.loginError }>
             <input
               name="email"
               type="email"
               value={ this.state.email }
               onChange={ this.handleOnChange } />
             <label>Email</label>
-          </FormFieldStyled>
+          </UserFormFieldStyled>
 
-          <FormFieldStyled value={ this.state.password }error={ this.props.loginError }>
+          <UserFormFieldStyled value={ this.state.password }error={ this.props.loginError }>
             <input
               className="passwordInput"
               name="password"
@@ -88,10 +88,10 @@ class Login extends Component {
               src={ iconShow }
               alt="Show Password"
               onClick={ this.togglePassword } />
-          </FormFieldStyled>
+          </UserFormFieldStyled>
 
           <Link to="forgotpassword" className="forgotpassword">Forgot Password?</Link><br />
-          <Link to="signup" className="signup">Don’t have account? <strong>Sign up</strong></Link>
+          <Link to="signup" className="signup-login">Don’t have account? <strong>Sign up</strong></Link>
 
           <PrimaryButton>Sign <span>in</span></PrimaryButton>
         </LoginContainer>
