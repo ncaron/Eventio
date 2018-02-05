@@ -7,6 +7,8 @@ const BigButton = styled.button`
   width: 240px;
   height: 57px;
   margin-top: 40px;
+  padding: 0;
+  color: ${white};
   font-family: "Hind", sans-serif;
   font-size: 16px;
   font-weight: 600;

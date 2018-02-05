@@ -19,6 +19,7 @@ const Container = styled.div`
   height: 100vh;
   width: 480px;
   background: url(${background}), ${charcoal_grey};
+  background-size: cover, cover;
   text-align: center;
   z-index: -1;
 
