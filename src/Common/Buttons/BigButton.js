@@ -7,7 +7,7 @@ const BigButton = styled.button`
   display: block;
   width: 240px;
   height: 57px;
-  margin-top: 40px;
+  margin: 40px auto;
   padding: 0;
   color: ${white};
   font-family: "Hind", sans-serif;
@@ -24,8 +24,6 @@ const BigButton = styled.button`
     color: ${white};
     line-height: 59px;
   }
-
-  p { color: ${white}; }
 `;
 
 export default BigButton;

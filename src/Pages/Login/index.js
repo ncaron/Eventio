@@ -86,7 +86,7 @@ class Login extends Component {
             <label>Email</label>
           </UserFormFieldStyled>
 
-          <UserFormFieldStyled value={ this.state.password }error={ this.props.loginError }>
+          <UserFormFieldStyled value={ this.state.password } error={ this.props.loginError }>
             <input
               className="passwordInput"
               name="password"
@@ -102,12 +102,12 @@ class Login extends Component {
           </UserFormFieldStyled>
 
           <Link to="forgotpassword" className="forgotpassword">Forgot Password?</Link><br />
-          <Link to="signup" className="signup-login">Don’t have account? <strong>Sign up</strong></Link>
+          <Link to="/signup" className="signup-login">Don’t have account? <strong>Sign up</strong></Link>
 
           <PrimaryButton>
             {this.state.loading ?
               <img className="spinner" src={ spinner } /> :
-              <p>Sign <span>in</span></p>}
+              <p className="signup-login-btn">Sign <span>in</span></p>}
           </PrimaryButton>
         </LoginContainer>
       </div>

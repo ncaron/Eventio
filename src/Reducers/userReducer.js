@@ -2,6 +2,7 @@ import * as types from '../Actions/actionTypes';
 import cloneState from '../Helpers/cloneState';
 
 const initialState = {
+  signupError: '',
   loggedIn: false,
   loginError: false,
   passwordSent: false,
@@ -16,8 +17,14 @@ const userReducer = (state = initialState, action) => {
   let newState = cloneState(state);
 
   switch(action.type) {
+    case types.SIGNUP_FAILURE: {
+      newState.signupError = action.error.message;
+
+      return newState;
+    }
+
     case types.LOGIN_SUCCESS: {
-      const user = action.loginResult;
+      const user = action.loginResult || action.signupResult;
 
       newState.currentUser.uid = user.uid;
       newState.currentUser.email = user.email;

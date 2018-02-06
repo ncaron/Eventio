@@ -1,5 +1,17 @@
 import * as types from './actionTypes';
 
+export const signup = ({firstName, lastName, email, password}) => {
+  return {
+    type: types.SIGNUP_REQUEST,
+    payload: {
+      firstName,
+      lastName,
+      email,
+      password
+    }
+  };
+};
+
 export const login = (email, password) => {
   return {
     type: types.LOGIN_REQUEST,

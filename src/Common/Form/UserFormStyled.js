@@ -5,7 +5,8 @@ import {
   charcoal_grey,
   cool_grey,
   red_pink,
-  silver_three
+  silver_three,
+  white
 } from '../../Common/colorPalette';
 
 const UserFormContainer = styled.form`
@@ -53,8 +54,7 @@ const UserFormContainer = styled.form`
   }
 
   button {
-    margin-right: auto;
-    margin-left: auto;
+    .signup-login-btn { color: ${white}; }
   }
 
   @media (min-width: ${queries.SMALL}) {

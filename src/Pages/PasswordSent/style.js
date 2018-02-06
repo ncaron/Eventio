@@ -26,11 +26,6 @@ const PasswordSentContainer = styled.div`
     color: ${cool_grey};
   }
 
-  button {
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   @media (min-width: ${queries.MEDIUM}) {
     h1 {
       font-size: 28px;
