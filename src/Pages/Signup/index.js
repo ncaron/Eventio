@@ -39,6 +39,10 @@ class Signup extends Component {
     this.validateForm = this.validateForm.bind(this);
   }
 
+  componentDidMount() {
+    changeTitle('Sign Up');
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn || nextProps.signupError) {
       this.setState({ loading: false });
@@ -125,8 +129,6 @@ class Signup extends Component {
   }
 
   render() {
-    changeTitle('Signup');
-
     return (
       <div>
         {this.props.loggedIn && <Redirect to="/"/>}

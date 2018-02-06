@@ -31,6 +31,10 @@ class Login extends Component {
     this.togglePassword = this.togglePassword.bind(this);
   }
 
+  componentDidMount() {
+    changeTitle('Login');
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn || nextProps.loginError) {
       this.setState({ loading: false });
@@ -59,8 +63,6 @@ class Login extends Component {
   }
 
   render() {
-    changeTitle('Login');
-
     return (
       <div>
         {this.props.loggedIn && <Redirect to="/"/>}

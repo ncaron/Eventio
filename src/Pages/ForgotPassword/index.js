@@ -27,6 +27,10 @@ class ForgotPassword extends Component {
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
   }
 
+  componentDidMount() {
+    changeTitle('Forgot Password');
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.passwordSent || nextProps.passwordResetError) {
       this.setState({ loading: false });
@@ -49,8 +53,6 @@ class ForgotPassword extends Component {
   }
 
   render() {
-    changeTitle('Forgot Password');
-
     return (
       <div>
         {this.props.loggedIn && <Redirect to="/"/>}

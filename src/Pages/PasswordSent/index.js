@@ -14,9 +14,11 @@ class PasswordSent extends Component {
     super(props);
   }
 
-  render() {
+  componentDidMount() {
     changeTitle('Password Sent');
+  }
 
+  render() {
     return (
       <div>
         {!this.props.passwordSent && <Redirect to="/"/>}
