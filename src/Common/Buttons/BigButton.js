@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { white } from '../colorPalette';
 
 const BigButton = styled.button`
+  position: relative;
   display: block;
   width: 240px;
   height: 57px;
@@ -23,6 +24,8 @@ const BigButton = styled.button`
     color: ${white};
     line-height: 59px;
   }
+
+  p { color: ${white}; }
 `;
 
 export default BigButton;

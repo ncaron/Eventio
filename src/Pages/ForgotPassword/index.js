@@ -12,16 +12,25 @@ import UserFormFieldStyled from '../../Common/Form/UserFormFieldStyled';
 import PrimaryButton from '../../Common/Buttons/PrimaryButton';
 import { forgotPassword } from '../../Actions/userAction';
 
+const spinner = require('../../Common/images/loading.png');
+
 class ForgotPassword extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       email: '',
+      loading: false
     };
 
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.passwordSent || nextProps.passwordResetError) {
+      this.setState({ loading: false });
+    }
   }
 
   handleOnChange(e) {
@@ -33,7 +42,10 @@ class ForgotPassword extends Component {
   handleOnSubmit(e) {
     e.preventDefault();
 
-    this.props.forgotPassword(this.state.email);
+    if (!this.state.loading) {
+      this.props.forgotPassword(this.state.email);
+      this.setState({ loading: true });
+    }
   }
 
   render() {
@@ -67,7 +79,11 @@ class ForgotPassword extends Component {
 
           <Link to="signup" className="signup-login">Don’t have account? <strong>Sign up</strong></Link>
 
-          <PrimaryButton>Request reset link</PrimaryButton>
+          <PrimaryButton>
+            {this.state.loading ?
+              <img className="spinner" src={ spinner } /> :
+              'Request reset link'}
+          </PrimaryButton>
         </ForgotPasswordContainer>
       </div>
     );

@@ -13,6 +13,7 @@ import PrimaryButton from '../../Common/Buttons/PrimaryButton';
 import { login } from '../../Actions/userAction';
 
 const iconShow = require('../../Common/images/iconShow.png');
+const spinner = require('../../Common/images/loading.png');
 
 class Login extends Component {
   constructor(props) {
@@ -21,12 +22,19 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      passwordType: 'password'
+      passwordType: 'password',
+      loading: false
     };
 
     this.handleOnChange = this.handleOnChange.bind(this);
     this.handleOnSubmit = this.handleOnSubmit.bind(this);
     this.togglePassword = this.togglePassword.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn || nextProps.loginError) {
+      this.setState({ loading: false });
+    }
   }
 
   handleOnChange(e) {
@@ -38,7 +46,10 @@ class Login extends Component {
   handleOnSubmit(e) {
     e.preventDefault();
 
-    this.props.login(this.state.email, this.state.password);
+    if (!this.state.loading) {
+      this.props.login(this.state.email, this.state.password);
+      this.setState({ loading: true });
+    }
   }
 
   togglePassword() {
@@ -93,7 +104,11 @@ class Login extends Component {
           <Link to="forgotpassword" className="forgotpassword">Forgot Password?</Link><br />
           <Link to="signup" className="signup-login">Don’t have account? <strong>Sign up</strong></Link>
 
-          <PrimaryButton>Sign <span>in</span></PrimaryButton>
+          <PrimaryButton>
+            {this.state.loading ?
+              <img className="spinner" src={ spinner } /> :
+              <p>Sign <span>in</span></p>}
+          </PrimaryButton>
         </LoginContainer>
       </div>
     );
