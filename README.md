@@ -24,3 +24,4 @@ A responsive React app allowing users to sign up for and create events. This is 
 - [ ] Join/Leave an event.
 - [ ] View details of an event which includes a list of attendees.
 - [ ] View your profile and see which events you created/joined.
+- [ ] Setup with GitHub Pages.
